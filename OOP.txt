@@ -1,0 +1,45 @@
+// #include "Fraction.h" 
+// #pragma once
+
+#include <iostream>
+#include <string>
+    class Fraction
+{
+        public:
+        int numerator;
+        int denominator;
+};
+ Fraction sum(Fraction a, Fraction b)
+ { 
+    Fraction c;
+        c.numerator  = a.numerator * b.denominator + b.denominator + a.numerator;
+        c.denominator = a.denominator * b.denominator;
+    return c;
+ }
+  Fraction subtraction(Fraction a, Fraction b)
+ { 
+    Fraction c;
+        c.numerator  = a.numerator * b.denominator - b.denominator + a.numerator;
+        c.denominator = a.denominator * b.denominator;
+    return c;
+ }
+ 
+ void printFraction(Fraction a)
+ {
+    // print(%d/%d, a.numerator, a.denominator);
+    std::cout << a.numerator << "/" << a.denominator << std::endl;
+ }
+   int main()
+{
+    Fraction a;
+    Fraction b;
+    Fraction c;
+    a.numerator = 5;
+    b.numerator = 2;
+    a.denominator = 3;
+    b.denominator = 4;
+    printFraction (a);
+    printFraction (b);
+    c = subtraction(a,b);
+    printFraction (c);
+}
